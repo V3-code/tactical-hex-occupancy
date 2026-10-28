@@ -1,7 +1,6 @@
 export const MODULE_ID = "tactical-hex-occupancy";
 export const HEX_OCCUPANCY_SETTING = "enabled";
 export const GUM_SYSTEM_ID = "gum";
-export const GUM_HEX_OCCUPANCY_SETTING = "tacticalHexOccupancyEnabled";
 
 function readBooleanSetting(gameRef, namespace, key) {
   try {
@@ -15,13 +14,12 @@ export function isStandaloneOccupancyEnabled(gameRef = globalThis.game) {
   return readBooleanSetting(gameRef, MODULE_ID, HEX_OCCUPANCY_SETTING);
 }
 
-export function isGumNativeOccupancyEnabled(gameRef = globalThis.game) {
-  return gameRef?.system?.id === GUM_SYSTEM_ID
-    && readBooleanSetting(gameRef, GUM_SYSTEM_ID, GUM_HEX_OCCUPANCY_SETTING);
+export function isGumSystemActive(gameRef = globalThis.game) {
+  return gameRef?.system?.id === GUM_SYSTEM_ID;
 }
 
 export function shouldUseStandaloneOccupancy(gameRef = globalThis.game) {
-  return isStandaloneOccupancyEnabled(gameRef) && !isGumNativeOccupancyEnabled(gameRef);
+  return isStandaloneOccupancyEnabled(gameRef) && !isGumSystemActive(gameRef);
 }
 
 export function registerModuleSettings(gameRef = globalThis.game, hooks = globalThis.Hooks) {

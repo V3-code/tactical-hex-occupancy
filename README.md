@@ -20,7 +20,7 @@ O GURPS GUM continua sendo o projeto de origem e a referência principal desta f
 
 ## Compatibilidade com o GUM
 
-O GUM possui sua própria implementação nativa desta funcionalidade. Quando o módulo detecta que a opção nativa do GUM também está ativa, ele permanece inativo para evitar marcadores duplicados e mostra um aviso amigável. Para usar este módulo com o GUM, desative **Ocupação Tática de Hexes do GURPS** nas configurações do sistema e mantenha **Tactical Hex Occupancy** ativo.
+O GUM possui sua própria implementação nativa desta funcionalidade. Se o módulo for instalado em um mundo com sistema nativo GUM, então o módulo permanecerá inativo para evitar duplicação.
 
 ## Instalação
 
@@ -36,7 +36,7 @@ O módulo pode ser habilitado em **Configurações do módulo → Tactical Hex O
 
 Tactical Hex Occupancy is a standalone Foundry VTT module extracted from the native tactical hex occupancy feature built into [GURPS GUM](https://github.com/V3-code/GURPS-GUM). It displays an interactive marker when multiple visible tokens share a hex, including multi-hex tokens and separate elevations.
 
-GURPS GUM remains the original project and primary home of this feature. When both the GUM-native option and this module are enabled, the standalone module stays inactive and displays a friendly notice to prevent duplicate markers.
+GURPS GUM remains the original project and primary home of this feature. When installed in a world that uses GURPS GUM, the standalone module remains inactive to prevent duplication.
 
 ## Licença
 

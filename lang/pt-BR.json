@@ -14,5 +14,5 @@
   "THO.HexOccupancy.Configure": "Configurar token",
   "THO.HexOccupancy.ControlDenied": "Você não pode controlar este token.",
   "THO.HexOccupancy.SheetDenied": "Você não pode abrir esta ficha.",
-  "THO.HexOccupancy.GumConflict": "O GURPS GUM já está exibindo sua ocupação tática nativa. Para evitar marcadores duplicados, o módulo Tactical Hex Occupancy permanecerá inativo. Desative ‘Ocupação Tática de Hexes do GURPS’ nas configurações do GUM para usar o módulo autônomo."
+  "THO.HexOccupancy.GumConflict": "O GUM possui sua própria implementação nativa desta funcionalidade. Como este mundo utiliza o sistema GUM, o módulo Tactical Hex Occupancy permanecerá inativo para evitar duplicação."
 }

@@ -1,6 +1,6 @@
 import {
   MODULE_ID,
-  isGumNativeOccupancyEnabled,
+  isGumSystemActive,
   isStandaloneOccupancyEnabled,
   registerModuleSettings
 } from "../module/config.mjs";
@@ -20,7 +20,7 @@ function localize(key, fallback) {
 }
 
 export function notifyAboutGumConflict({ force = false } = {}) {
-  const conflict = isStandaloneOccupancyEnabled() && isGumNativeOccupancyEnabled();
+  const conflict = isStandaloneOccupancyEnabled() && isGumSystemActive();
   if (!conflict) {
     conflictWarningShown = false;
     return false;
@@ -30,7 +30,7 @@ export function notifyAboutGumConflict({ force = false } = {}) {
   conflictWarningShown = true;
   globalThis.ui?.notifications?.warn?.(localize(
     "THO.HexOccupancy.GumConflict",
-    "GURPS GUM is already displaying its native tactical occupancy markers. Tactical Hex Occupancy will remain inactive to prevent duplicates. Disable the native GUM setting to use the standalone module."
+    "GURPS GUM already includes this feature. Tactical Hex Occupancy remains inactive in GUM worlds to prevent duplication."
   ), { permanent: true });
   return true;
 }

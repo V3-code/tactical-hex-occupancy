@@ -5,7 +5,7 @@ import test from "node:test";
 import {
   HEX_OCCUPANCY_SETTING,
   MODULE_ID,
-  isGumNativeOccupancyEnabled,
+  isGumSystemActive,
   shouldUseStandaloneOccupancy
 } from "../module/config.mjs";
 
@@ -26,11 +26,11 @@ test("runs independently of the active game system", () => {
   assert.equal(shouldUseStandaloneOccupancy(gameWith({ standalone: false })), false);
 });
 
-test("yields to GUM's native feature when both are enabled", () => {
-  const conflict = gameWith({ system: "gum", standalone: true, gum: true });
-  assert.equal(isGumNativeOccupancyEnabled(conflict), true);
+test("always yields to GUM's native implementation", () => {
+  const conflict = gameWith({ system: "gum", standalone: true, gum: false });
+  assert.equal(isGumSystemActive(conflict), true);
   assert.equal(shouldUseStandaloneOccupancy(conflict), false);
-  assert.equal(shouldUseStandaloneOccupancy(gameWith({ system: "gum", gum: false })), true);
+  assert.equal(shouldUseStandaloneOccupancy(gameWith({ system: "gum", gum: true })), false);
 });
 
 test("ships as a standalone Foundry module with GUM attribution", () => {
