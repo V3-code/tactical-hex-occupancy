@@ -2,7 +2,7 @@
 
 **Autor:** V3-code
 **Projeto:** Tactical Hex Occupancy
-**Versão:** 1.0.0 — Outubro de 2026
+**Versão:** 1.0.1 — Outubro de 2026
 
 Este projeto está licenciado sob a **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)**.
 
