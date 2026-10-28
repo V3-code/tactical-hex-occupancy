@@ -1,0 +1,19 @@
+{
+  "THO.Settings.Enabled.Name": "Tactical Hex Occupancy",
+  "THO.Settings.Enabled.Hint": "Em cenas com grade hexagonal, mostra um marcador quando dois ou mais tokens visíveis ocupam o mesmo espaço, incluindo tokens de múltiplos hexes.",
+  "THO.HexOccupancy.PickerTitle": "Ocupantes do hex",
+  "THO.HexOccupancy.Close": "Fechar",
+  "THO.HexOccupancy.Minimize": "Minimizar",
+  "THO.HexOccupancy.Restore": "Restaurar",
+  "THO.HexOccupancy.Ended": "Estes tokens não compartilham mais este hex ocupado.",
+  "THO.HexOccupancy.UnknownToken": "Token",
+  "THO.HexOccupancy.NoVisibleStatuses": "Sem estados visíveis",
+  "THO.HexOccupancy.Control": "Controlar token (Shift preserva a seleção atual)",
+  "THO.HexOccupancy.Target": "Alternar alvo (Shift preserva os outros alvos)",
+  "THO.HexOccupancy.OpenSheet": "Abrir ficha do ator",
+  "THO.HexOccupancy.Configure": "Configurar token",
+  "THO.HexOccupancy.ControlDenied": "Você não pode controlar este token.",
+  "THO.HexOccupancy.SheetDenied": "Você não pode abrir esta ficha.",
+  "THO.HexOccupancy.GumConflict": "O GURPS GUM já está exibindo sua ocupação tática nativa. Para evitar marcadores duplicados, o módulo Tactical Hex Occupancy permanecerá inativo. Desative ‘Ocupação Tática de Hexes do GURPS’ nas configurações do GUM para usar o módulo autônomo."
+}
+

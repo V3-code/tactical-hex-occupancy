@@ -1,0 +1,41 @@
+{
+  "id": "tactical-hex-occupancy",
+  "title": "Tactical Hex Occupancy",
+  "description": "Standalone tactical hex occupancy module extracted from the native feature of GURPS GUM. Shows an interactive marker when multiple visible tokens share a hex.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Victor Valentim (V3-code)",
+      "url": "https://github.com/V3-code"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "14"
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/hex-occupancy.css"
+  ],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "url": "https://github.com/V3-code/tactical-hex-occupancy",
+  "manifest": "https://raw.githubusercontent.com/V3-code/tactical-hex-occupancy/main/module.json",
+  "download": "https://github.com/V3-code/tactical-hex-occupancy/releases/latest/download/tactical-hex-occupancy.zip",
+  "license": "https://github.com/V3-code/tactical-hex-occupancy/blob/main/LICENSE.md",
+  "readme": "https://github.com/V3-code/tactical-hex-occupancy/blob/main/README.md",
+  "bugs": "https://github.com/V3-code/tactical-hex-occupancy/issues"
+}
+
