@@ -4,6 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/hex-occupancy.test.mjs tests/hex-occupancy-layer.test.mjs tests/hex-occupancy-refresh.test.mjs tests/module-integration.test.mjs"
+    "test": "node --test tests/hex-occupancy.test.mjs tests/hex-occupancy-layer.test.mjs tests/hex-occupancy-refresh.test.mjs tests/module-integration.test.mjs tests/release-tooling.test.mjs"
   }
 }
