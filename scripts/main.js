@@ -59,4 +59,3 @@ Hooks.on("gumHexOccupancySettingChanged", () => {
   notifyAboutGumConflict({ force: true });
   hexOccupancyOverlay.scheduleRefresh();
 });
-

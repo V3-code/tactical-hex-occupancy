@@ -7,4 +7,3 @@
     "test": "node --test tests/hex-occupancy.test.mjs tests/hex-occupancy-layer.test.mjs tests/hex-occupancy-refresh.test.mjs tests/module-integration.test.mjs"
   }
 }
-

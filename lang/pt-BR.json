@@ -16,4 +16,3 @@
   "THO.HexOccupancy.SheetDenied": "Você não pode abrir esta ficha.",
   "THO.HexOccupancy.GumConflict": "O GURPS GUM já está exibindo sua ocupação tática nativa. Para evitar marcadores duplicados, o módulo Tactical Hex Occupancy permanecerá inativo. Desative ‘Ocupação Tática de Hexes do GURPS’ nas configurações do GUM para usar o módulo autônomo."
 }
-

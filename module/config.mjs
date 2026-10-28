@@ -36,4 +36,3 @@ export function registerModuleSettings(gameRef = globalThis.game, hooks = global
     onChange: enabled => hooks?.callAll?.("tacticalHexOccupancySettingChanged", { enabled })
   });
 }
-

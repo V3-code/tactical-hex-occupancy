@@ -43,4 +43,3 @@ GURPS GUM remains the original project and primary home of this feature. When bo
 Distribuído sob a licença [CC BY-NC-ND 4.0](LICENSE.md), seguindo o projeto GURPS GUM de origem.
 
 GURPS é marca registrada da Steve Jackson Games. Este projeto é uma ferramenta não oficial, gratuita, sem fins lucrativos e não é afiliado, endossado ou licenciado pela Steve Jackson Games.
-

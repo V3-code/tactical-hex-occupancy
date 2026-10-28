@@ -49,4 +49,3 @@ test("ships as a standalone Foundry module with GUM attribution", () => {
   assert.match(main, /THO\.HexOccupancy\.GumConflict/);
   assert.match(layer, /modules\/tactical-hex-occupancy\/assets\/ui\/hex-occupancy-marker-frame\.svg/);
 });
-

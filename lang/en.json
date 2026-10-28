@@ -16,4 +16,3 @@
   "THO.HexOccupancy.SheetDenied": "You cannot open this actor sheet.",
   "THO.HexOccupancy.GumConflict": "GURPS GUM is already displaying its native tactical occupancy markers. To prevent duplicates, Tactical Hex Occupancy will remain inactive. Disable ‘GURPS Tactical Hex Occupancy’ in the GUM settings to use the standalone module."
 }
-
