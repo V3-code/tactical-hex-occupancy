@@ -44,7 +44,7 @@ test("ships as a standalone Foundry module with GUM attribution", () => {
   assert.equal(manifest.compatibility.minimum, "12");
   assert.ok(manifest.esmodules.includes("scripts/main.js"));
   assert.match(readme, /GURPS GUM/);
-  assert.match(readme, /https:\/\/github\.com\/V3-code\/GURPS-GUM/);
+  assert.doesNotMatch(readme, /github\.com\/V3-code\/GURPS-GUM/i);
   assert.match(main, /gumHexOccupancySettingChanged/);
   assert.match(main, /THO\.HexOccupancy\.GumConflict/);
   assert.match(layer, /modules\/tactical-hex-occupancy\/assets\/ui\/hex-occupancy-marker-frame\.svg/);

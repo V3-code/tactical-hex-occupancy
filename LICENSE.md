@@ -10,6 +10,6 @@ Você é livre para compartilhar — copiar e redistribuir o material em qualque
 
 Licença completa: https://creativecommons.org/licenses/by-nc-nd/4.0/
 
-Este módulo foi extraído de uma funcionalidade originalmente desenvolvida para o [GURPS GUM](https://github.com/V3-code/GURPS-GUM), do mesmo autor.
+Este módulo foi extraído de uma funcionalidade originalmente desenvolvida para o GURPS GUM, do mesmo autor.
 
 GURPS é marca registrada da Steve Jackson Games. Este projeto é uma ferramenta não oficial, gratuita e sem fins lucrativos. Não é afiliado, endossado ou licenciado pela Steve Jackson Games.

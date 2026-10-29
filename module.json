@@ -2,7 +2,7 @@
   "id": "tactical-hex-occupancy",
   "title": "Tactical Hex Occupancy",
   "description": "Standalone tactical hex occupancy module extracted from the native feature of GURPS GUM. Shows an interactive marker when multiple visible tokens share a hex.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "authors": [
     {
       "name": "V3-Code",
