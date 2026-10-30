@@ -32,5 +32,5 @@ test("builds Foundry API validation and publication payloads", async () => {
   assert.equal(validation["dry-run"], true);
   assert.equal(publication["dry-run"], false);
   assert.equal(publication.release.manifest, `https://github.com/V3-code/tactical-hex-occupancy/releases/download/${tag}/module.json`);
-  assert.deepEqual(publication.release.compatibility, { minimum: "12", verified: "14", maximum: "" });
+  assert.deepEqual(publication.release.compatibility, { minimum: "13", verified: "14", maximum: "" });
 });

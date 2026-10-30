@@ -41,7 +41,10 @@ Hooks.once("init", () => {
   registerHexOccupancyCanvasHooks(Hooks);
 
   const module = game.modules?.get?.(MODULE_ID);
-  if (module) module.api = { hexOccupancyOverlay };
+  if (module) module.api = {
+    gridOccupancyOverlay: hexOccupancyOverlay,
+    hexOccupancyOverlay
+  };
 });
 
 Hooks.once("ready", () => {

@@ -4,6 +4,25 @@ export function isHexagonalGrid(grid) {
   return grid?.isHexagonal === true;
 }
 
+export function isSquareGrid(grid) {
+  if (!grid || grid.isGridless === true || isHexagonalGrid(grid)) return false;
+  if (grid.isSquare === true) return true;
+
+  const type = finiteCoordinate(grid.type);
+  const gridTypes = globalThis.CONST?.GRID_TYPES;
+  const gridlessType = finiteCoordinate(gridTypes?.GRIDLESS) ?? 0;
+  const squareType = finiteCoordinate(gridTypes?.SQUARE) ?? 1;
+  if (type !== null) return type === squareType && type !== gridlessType;
+
+  // Foundry exposes isGridless and isHexagonal on its live grid object. If
+  // both are explicitly false, the remaining supported topology is square.
+  return grid.isGridless === false && grid.isHexagonal === false;
+}
+
+export function isSupportedOccupancyGrid(grid) {
+  return typeof grid?.getOffset === "function" && (isHexagonalGrid(grid) || isSquareGrid(grid));
+}
+
 export function normalizeTokenElevation(token) {
   return finiteCoordinate(token?.document?.elevation ?? token?.elevation) ?? 0;
 }
@@ -48,39 +67,40 @@ export function getTokenOccupiedGridOffsets(token, grid) {
       for (const rawOffset of document.getOccupiedGridSpaceOffsets() ?? []) {
         const offset = normalizeGridOffset(rawOffset);
         if (!offset) continue;
-        const elevation = finiteCoordinate(rawOffset?.k) ?? normalizeTokenElevation(token);
-        const key = `${offset.i}:${offset.j}:${elevation}`;
+        // Foundry may expose a `k` component as part of the grid coordinate.
+        // It is not the TokenDocument elevation and must not split occupancy.
+        const key = `${offset.i}:${offset.j}`;
         if (seen.has(key)) continue;
         seen.add(key);
-        occupied.push({ ...offset, elevation });
+        occupied.push(offset);
       }
       if (occupied.length) return occupied;
     } catch (_error) {
       // Older documents and lightweight test doubles may not have a complete
-      // Scene context. Fall back to the center hex in that case.
+      // Scene context. Fall back to the token's center grid space in that case.
     }
   }
 
   const center = getTokenCanvasCenter(token);
   if (!center || typeof grid?.getOffset !== "function") return [];
   const offset = normalizeGridOffset(grid.getOffset(center));
-  return offset ? [{ ...offset, elevation: normalizeTokenElevation(token) }] : [];
+  return offset ? [offset] : [];
 }
 
-export function buildHexOccupancyGroups(tokens = [], {
+export function buildGridOccupancyGroups(tokens = [], {
   grid,
   tokenFilter = () => true,
   minimumOccupants = 2
 } = {}) {
-  if (!isHexagonalGrid(grid) || typeof grid.getOffset !== "function") return [];
+  if (!isSupportedOccupancyGrid(grid)) return [];
 
   const buckets = new Map();
   for (const token of Array.from(tokens ?? [])) {
     if (!token || !tokenFilter(token)) continue;
-    for (const { i, j, elevation } of getTokenOccupiedGridOffsets(token, grid)) {
-      const key = `${i}:${j}:${elevation}`;
+    for (const { i, j } of getTokenOccupiedGridOffsets(token, grid)) {
+      const key = `${i}:${j}`;
       const offset = { i, j };
-      const bucket = buckets.get(key) ?? { key, offset, elevation, tokens: [] };
+      const bucket = buckets.get(key) ?? { key, offset, tokens: [] };
       if (!bucket.tokens.includes(token)) bucket.tokens.push(token);
       buckets.set(key, bucket);
     }
@@ -105,3 +125,7 @@ export function buildHexOccupancyGroups(tokens = [], {
     })
     .sort((left, right) => left.key.localeCompare(right.key));
 }
+
+// Backwards-compatible export for integrations built against the original
+// hex-only module API. It now supports both hexagonal and square grids.
+export const buildHexOccupancyGroups = buildGridOccupancyGroups;

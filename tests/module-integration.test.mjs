@@ -33,7 +33,7 @@ test("always yields to GUM's native implementation", () => {
   assert.equal(shouldUseStandaloneOccupancy(gameWith({ system: "gum", gum: true })), false);
 });
 
-test("ships as a standalone Foundry module with GUM attribution", () => {
+test("ships as a standalone grid occupancy module with GUM attribution", () => {
   const root = new URL("../", import.meta.url);
   const manifest = JSON.parse(fs.readFileSync(new URL("module.json", root), "utf8"));
   const readme = fs.readFileSync(new URL("README.md", root), "utf8");
@@ -41,11 +41,13 @@ test("ships as a standalone Foundry module with GUM attribution", () => {
   const layer = fs.readFileSync(new URL("module/canvas/hex-occupancy-layer.mjs", root), "utf8");
 
   assert.equal(manifest.id, MODULE_ID);
-  assert.equal(manifest.compatibility.minimum, "12");
+  assert.equal(manifest.title, "Tactical Hex Occupancy");
+  assert.equal(manifest.compatibility.minimum, "13");
   assert.ok(manifest.esmodules.includes("scripts/main.js"));
   assert.match(readme, /GURPS GUM/);
   assert.doesNotMatch(readme, /github\.com\/V3-code\/GURPS-GUM/i);
   assert.match(main, /gumHexOccupancySettingChanged/);
   assert.match(main, /THO\.HexOccupancy\.GumConflict/);
+  assert.match(main, /gridOccupancyOverlay/);
   assert.match(layer, /modules\/tactical-hex-occupancy\/assets\/ui\/hex-occupancy-marker-frame\.svg/);
 });

@@ -30,7 +30,7 @@ jobs:
           dist/tactical-hex-occupancy.zip
           dist/module.json
           --title "Tactical Hex Occupancy $GITHUB_REF_NAME"
-          --notes "Standalone tactical hex occupancy module extracted from the native feature of GURPS GUM. See the README for installation, attribution, and compatibility details."
+          --notes "Originally designed for hex grids, this release adds square-grid occupancy, elevation labels, and stable occupant tracking across multi-space token movement. See the README for demonstrations, installation, attribution, and compatibility details."
       - name: Register release with Foundry VTT
         env:
           FOUNDRY_RELEASE_TOKEN: ${{ secrets.FOUNDRY_RELEASE_TOKEN }}
