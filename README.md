@@ -24,9 +24,6 @@ O GURPS GUM continua sendo o projeto de origem desta funcionalidade.
 
 ![Marcadores de ocupação compartilhada em uma grade quadrada](https://raw.githubusercontent.com/V3-code/tactical-hex-occupancy/main/docs/media/square-grid-occupancy.png)
 
-- [Vídeo: ocupação envolvendo um token grande em grade hexagonal](https://github.com/V3-code/tactical-hex-occupancy/blob/main/docs/media/hex-large-token-occupancy.mp4)
-- [Vídeo: marcador e painel interativo de ocupantes](https://github.com/V3-code/tactical-hex-occupancy/blob/main/docs/media/hex-occupant-panel.mp4)
-
 ## Compatibilidade com o GUM
 
 O GUM possui sua própria implementação nativa desta funcionalidade. Se o módulo for instalado em um mundo com sistema nativo GUM, então o módulo permanecerá inativo para evitar duplicação.
