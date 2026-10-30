@@ -20,6 +20,12 @@ O GURPS GUM continua sendo o projeto de origem desta funcionalidade.
 
 ## Demonstração
 
+### Grade hexagonal
+
+![Painel de ocupantes em uma grade hexagonal](https://raw.githubusercontent.com/V3-code/tactical-hex-occupancy/main/docs/media/hex-grid-occupant-panel.png)
+
+### Grade quadrada
+
 ![Painel de ocupantes em uma grade quadrada](https://raw.githubusercontent.com/V3-code/tactical-hex-occupancy/main/docs/media/square-grid-occupant-panel.png)
 
 ![Marcadores de ocupação compartilhada em uma grade quadrada](https://raw.githubusercontent.com/V3-code/tactical-hex-occupancy/main/docs/media/square-grid-occupancy.png)
